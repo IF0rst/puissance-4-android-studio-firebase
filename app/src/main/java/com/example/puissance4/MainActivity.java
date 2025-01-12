@@ -12,6 +12,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button PlayButton;
     private Button ScoreButton;
+    private Button SettingsButton;
+    private Button CreditsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
         PlayButton = findViewById(R.id.Play);
         ScoreButton = findViewById(R.id.Score);
+        SettingsButton = findViewById(R.id.Settings);
+        CreditsButton = findViewById(R.id.Credits);
 
         ScoreButton.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, ActivityScoreboard.class);
@@ -28,6 +32,16 @@ public class MainActivity extends AppCompatActivity {
 
         PlayButton.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, ActivityGame.class);
+            startActivity(intent);
+        });
+
+        SettingsButton.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, ActivitySettings.class);
+            startActivity(intent);
+        });
+
+        CreditsButton.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, ActivityCredits.class);
             startActivity(intent);
         });
 
@@ -41,5 +55,12 @@ public class MainActivity extends AppCompatActivity {
                 }).setCancelable(false).show();
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SettingsHelper Settings = new SettingsHelper(getApplicationContext());
+        Settings.ApplyOptions(findViewById(R.id.main));
     }
 }

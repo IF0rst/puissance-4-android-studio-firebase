@@ -21,6 +21,9 @@ public class ActivityScoreboard extends AppCompatActivity {
         setContentView(R.layout.activity_scoreboard);
         this.History = findViewById(R.id.History);
 
+        SettingsHelper Settings = new SettingsHelper(getApplicationContext());
+        Settings.ApplyOptions(findViewById(R.id.main));
+
         if (Score == null){
             Score = new ScoreHandler(getApplicationContext());
         }

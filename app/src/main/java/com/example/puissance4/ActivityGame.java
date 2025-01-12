@@ -3,6 +3,7 @@ package com.example.puissance4;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.ArrayMap;
+import android.util.Log;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -17,7 +18,6 @@ public class ActivityGame extends AppCompatActivity {
     private GridLayout Layout;
     private GameHandler GHandler;
     private TextView PlayerText;
-    private TextView TurnText;
 
     private Map<String,ImageView> PhysicalBoard = new ArrayMap<>();
 
@@ -29,7 +29,9 @@ public class ActivityGame extends AppCompatActivity {
 
         Layout = findViewById(R.id.PawnHolder);
         PlayerText = findViewById(R.id.Player);
-        TurnText = findViewById(R.id.Turn);
+
+        SettingsHelper Settings = new SettingsHelper(getApplicationContext());
+        Settings.ApplyOptions(findViewById(R.id.main));
 
         GHandler = new GameHandler();
 
@@ -38,7 +40,6 @@ public class ActivityGame extends AppCompatActivity {
             public void onUpdate(String[][] board, String Player, String Turn, String Winner) {
                 UpdatePhysicalGrid(board);
                 PlayerText.setText("Vous êtes: "+ Player);
-                TurnText.setText("C'est au tour du "+Turn);
 
                 if (Winner != null){
                     if (!Winner.equals("None")) {
