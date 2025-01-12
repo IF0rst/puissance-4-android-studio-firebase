@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/Title"
+            android:layout_width="169dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="30dp"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:scaleX="2"
+            android:scaleY="2"
+            android:text="Puissance 4"
+            android:textColor="#FF5F5F" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_marginVertical="0dp"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:src="@drawable/g3" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/Play"
+                android:layout_width="251dp"
+                android:layout_height="36dp"
+                android:backgroundTint="#4195E2"
+                android:text="Jouer" />
+
+            <Button
+                android:id="@+id/Score"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:backgroundTint="#6431CA"
+                android:text="Score"
+                android:textColorLink="#992828" />
+
+            <Button
+                android:id="@+id/Settings"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:backgroundTint="#070707"
+                android:text="Paramètres"
+                android:textColorLink="#992828" />
+
+            <Button
+                android:id="@+id/Credits"
+                android:layout_width="122dp"
+                android:layout_height="38dp"
+                android:backgroundTint="#C7B70F"
+                android:text="Crédits"
+                android:textColorLink="#992828" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
